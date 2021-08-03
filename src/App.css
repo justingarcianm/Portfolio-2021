@@ -1,0 +1,7 @@
+@import '/src/Components/Header/Header.css';
+@import '/src/Components/Portfolio/Portfolio.css';
+@import '/src/Components/Contact/Contact.css';
+@import '/src/Components/Footer/Footer.css';
+
+@import '/src/Pages/Home/Home.css';
+@import '/src/Pages/About/About.css';
