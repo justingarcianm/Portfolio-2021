@@ -5,3 +5,21 @@
 
 @import '/src/Pages/Home/Home.css';
 @import '/src/Pages/About/About.css';
+
+/* global + testing styles */
+* {
+    margin:0;
+    padding: 0;
+    scroll-behavior: smooth;
+    max-width: 100%;
+}
+
+body,
+html {
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    height: 100vh;
+    scroll-snap-align: start;
+  }

@@ -1,9 +1,9 @@
 
 function Header () {
     return (
-        <section id="header">
+        <nav id="header">
             Header
-        </section>
+        </nav>
     )
 }
 

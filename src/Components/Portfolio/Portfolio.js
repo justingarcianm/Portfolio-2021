@@ -1,7 +1,7 @@
 
 function Portfolio () {
     return (
-        <section id="Portfolio">
+        <section id="portfolio">
             Portfolio
         </section>
     )
