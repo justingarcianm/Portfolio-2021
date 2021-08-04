@@ -1,0 +1,33 @@
+#home {
+    background-color: var(--home-bg-color);
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    height: 100vh;
+}
+
+#home h1 {
+    font-size: 8rem;
+    line-height: 7rem;
+    text-shadow: var(--text-shadow);
+}
+
+#home h2 {
+    font-size: 3.3rem;
+    letter-spacing: .2rem;
+    text-shadow: var(--text-shadow);
+}
+
+#home h3 {
+    line-height: 1.4em;
+    letter-spacing: .05em;
+}
+
+#stay-put {
+    position: fixed;
+    top:50%;
+    left:35%;
+    width: 50%;
+    transform:translate(-65%,-50%);
+    pointer-events: none;
+}

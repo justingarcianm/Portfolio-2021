@@ -1,0 +1,31 @@
+#about {
+    height: 100vh;
+    background-color: var(--about-bg-color);
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+}
+
+#about ul {
+    padding:0;
+}
+
+#about ul li {
+    list-style: none;
+    padding: 5px 15px;
+    border-radius: 10px;
+    background-color: var(--footer-bg-color);
+    display: inline-block;    
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    margin-right: .5rem;
+}
+
+#stay-put {
+    position: fixed;
+    top:50%;
+    left:35%;
+    width: 50%;
+    transform:translate(-65%,-50%);
+    pointer-events: none;
+}
