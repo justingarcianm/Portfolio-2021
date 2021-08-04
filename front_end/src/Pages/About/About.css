@@ -29,3 +29,8 @@
     transform:translate(-65%,-50%);
     pointer-events: none;
 }
+
+#about img {
+    max-width: 100%;
+    border-radius: 5%;
+}

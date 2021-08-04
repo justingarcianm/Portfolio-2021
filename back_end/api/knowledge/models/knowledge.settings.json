@@ -1,8 +1,9 @@
 {
   "kind": "collectionType",
-  "collectionName": "knowledges",
+  "collectionName": "skill",
   "info": {
-    "name": "Knowledge"
+    "name": "Skill",
+    "description": ""
   },
   "options": {
     "increments": true,

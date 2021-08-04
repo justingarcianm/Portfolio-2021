@@ -1,29 +1,55 @@
-function About() {
+import { useEffect, useState } from 'react'
+import { getSkills, getAbout, URI } from '../../Helpers'
 
-    const knowledgeArray = ['Ipsum', 'Ipsum', 'Ipsum', 'Ipsum', 'Ipsum', 'Ipsum', 'Ipsum', 'Ipsum', 'Ipsum', 'Ipsum', 'Ipsum', 'Ipsum', 'Ipsum', 'Ipsum']
+function About() {
+    const [skills, setSkills] = useState([])
+    const [about,setAbout] = useState([])
+    const [loading, setLoading] = useState(false)
+    useEffect(() => {
+        setLoading(true);
+
+        getAbout()
+        .then( items => {
+            if(loading) {
+                setAbout(items)
+            }
+        })
+
+        getSkills()
+        .then( items => {
+            if(loading) {
+                setSkills(items)
+            }
+        })
+        setLoading(false);
+    }, [loading])
+
+    // const trimmedURI = loading ?  "" : URI.substring(0,URI.length-1)
+    // const {url, name} = loading ? '' : about.profileImage.formats.medium
 
     return (
         <div id="about">
+            
             <div className="container">
                 <div className="row">
                     <div className="col-md-4" >
                         <div id="stay-put" >
-                            <img src="" alt="lorem" />
+                            {/* {loading ?  '' : <img src={trimmedURI + url} alt={name} />} */}
+                            
                         </div>
 
                     </div>
                     <div className="col-md-8">
                         <h1>Lorem Ipsum</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis imperdiet massa tincidunt nunc pulvinar sapien et. Nunc lobortis mattis aliquam faucibus purus in massa tempor. Vestibulum morbi blandit cursus risus at ultrices mi tempus.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis imperdiet massa tincidunt nunc pulvinar sapien et. Nunc lobortis mattis aliquam faucibus purus in massa tempor. Vestibulum morbi blandit cursus risus at ultrices mi tempus.</p>
+                        {about.description}
 
                         <hr />
 
                         <h3>Lorem</h3>
                         <ul>
-                            {knowledgeArray.map((item, index) => {
+                            {skills.map( item => {
                                 return (
-                                    <li key={index}>{item}</li>
+                                    <li key={item.id}>{item.entry}</li>
                                 )
                             })}
                         </ul>

@@ -1,4 +1,4 @@
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 function Header() {
     return (
@@ -13,8 +13,8 @@ function Header() {
                         <NavLink to="/" activeClassName="active">Home</NavLink>
                         <NavLink to="/about" activeClassName="active">About</NavLink>
                         <a href="#contact">Contact</a>
-                        <a href="https://github.com/justingarcianm" target="_blank">Lorem</a>
-                        <a href="https://www.linkedin.com" target="_blank">Ipsum</a>
+                        <a href="https://github.com/justingarcianm" target="_blank" rel="noreferrer">Lorem</a>
+                        <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">Ipsum</a>
                     </div>
                 </div>
             </div>
