@@ -1,8 +1,30 @@
 
 import PortfolioItem from "./PortfolioItem"
+import { useEffect, useState } from 'react'
+import { getProjects, URI } from '../../Helpers'
+
 
 function Portfolio () {
-    const portfolioArray = ['Project One','Project Two', 'Project Three','Project Four'];
+    const [state, setState] = useState({
+        loading:false,
+        projects:[]
+    })
+
+    useEffect(() => {
+        setState(prevState => ({ ...prevState, loading:true }))
+
+        getProjects()
+        .then(projects => {
+            if(state.loading) {
+                setState(prevState => ({ ...prevState, projects:projects }))
+            }
+        })
+        .catch( err => console.error(err) )
+
+        return () => setState(prevState => ({ ...prevState, loading:false }))
+
+    },[state.loading])
+
     return (
         <section id="portfolio" className="py-4 text-center">
            <div className="container-fluid" id="cover">
@@ -10,7 +32,7 @@ function Portfolio () {
                 Lorem Ipsum
             </h2>
             <div className="row">
-               {portfolioArray.map(item => <PortfolioItem pItem={item} key={item}/>)}
+               {state.projects.map(project => <PortfolioItem project={project} key={project.id} URI={URI}/> )}
            </div>
            </div>
         </section>

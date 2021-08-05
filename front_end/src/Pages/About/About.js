@@ -2,31 +2,35 @@ import { useEffect, useState } from 'react'
 import { getSkills, getAbout, URI } from '../../Helpers'
 
 function About() {
-    const [skills, setSkills] = useState([])
-    const [about,setAbout] = useState([])
-    const [loading, setLoading] = useState(false)
+
+    const [state, setState] = useState({
+        about:{},
+        skills:[],
+        loading:false
+    })
+
     useEffect(() => {
-        setLoading(true);
+        setState(prevState =>({ ...prevState, loading: true }))
+        
+        getSkills()
+        .then(items => {
+            if(state.loading) {
+                setState(prevState => ({ ...prevState, skills:items }))
+            }
+        })
+        .catch( err => console.error(err) )
 
         getAbout()
-        .then( items => {
-            if(loading) {
-                setAbout(items)
+        .then(item => {
+            if(state.loading) {
+                setState(prevState => ({ ...prevState, about:item }))
             }
         })
+        .catch( err => console.error(err) )
 
-        getSkills()
-        .then( items => {
-            if(loading) {
-                setSkills(items)
-            }
-        })
-        setLoading(false);
-    }, [loading])
+        return () => setState(prevState =>({ ...prevState, loading: false }))
 
-    // const trimmedURI = loading ?  "" : URI.substring(0,URI.length-1)
-    // const {url, name} = loading ? '' : about.profileImage.formats.medium
-
+    }, [state.loading])
     return (
         <div id="about">
             
@@ -34,20 +38,20 @@ function About() {
                 <div className="row">
                     <div className="col-md-4" >
                         <div id="stay-put" >
-                            {/* {loading ?  '' : <img src={trimmedURI + url} alt={name} />} */}
+                             { state.about.profileImage ? <img src={URI + state.about.profileImage.formats.medium.url} alt={state.about.profileImage.formats.medium.name} /> : ""}
                             
                         </div>
 
                     </div>
                     <div className="col-md-8">
                         <h1>Lorem Ipsum</h1>
-                        {about.description}
+                        <p>{state.about.description}</p>
 
                         <hr />
 
                         <h3>Lorem</h3>
                         <ul>
-                            {skills.map( item => {
+                            {state.skills.map( item => {
                                 return (
                                     <li key={item.id}>{item.entry}</li>
                                 )

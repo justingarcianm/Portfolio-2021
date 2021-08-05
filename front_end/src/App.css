@@ -43,6 +43,12 @@ body {
     scroll-snap-align: start;
 }
 
+.no-scroll {
+    margin: 0; 
+    height: 100%; 
+    overflow: hidden
+}
+
 :root {
     --main-font-color: #FFF;
     --secondary-font-color: #333;

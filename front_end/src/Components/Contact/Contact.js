@@ -56,7 +56,7 @@ function Contact() {
                                     onChange={handleChange}
                                     required></textarea>
                             </div>
-                            <button type="submit" className="btn">Submit</button>
+                            <button type="submit" className="btn custom-btn">Submit</button>
                         </form>
                         </div>
                     </div>

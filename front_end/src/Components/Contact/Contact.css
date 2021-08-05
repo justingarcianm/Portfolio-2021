@@ -17,3 +17,7 @@
     backdrop-filter: blur(5px);
     box-shadow: var(--text-shadow);
 }
+
+.custom-btn {
+    background-color: var(--home-bg-color);
+}

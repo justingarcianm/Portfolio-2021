@@ -1,16 +1,16 @@
 export const URI = process.env.REACT_APP_API_URI
 
-export function getProjects() {
-    return fetch(`${URI}projects`)
+export async function getProjects() {
+    return await fetch(`${URI}/projects`)
     .then( data => data.json() )
 }
 
-export function getSkills() {
-    return fetch(`${URI}knowledges`)
+export async function getSkills() {
+    return await fetch(`${URI}/knowledges`)
     .then( data => data.json() )
 }
 
-export function getAbout() {
-    return fetch(`${URI}about`)
+export async function getAbout() {
+    return await fetch(`${URI}/about`)
     .then( data => data.json() )
 }
