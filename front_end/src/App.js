@@ -7,6 +7,8 @@ import Footer from './Components/Footer/Footer'
 
 import Home from './Pages/Home/Home'
 import About from './Pages/About/About'
+import Blog from './Pages/Blog/Blog'
+import BlogContent from './Pages/BlogContent/BlogContent'
 
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css'
@@ -18,6 +20,8 @@ function App() {
             <main>
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />
+            <Route exact path="/blog" component={Blog} />
+            <Route path="/blog/:slug" component={BlogContent} />
             </main>
             <Contact/>
             <Footer/>

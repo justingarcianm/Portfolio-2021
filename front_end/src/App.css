@@ -2,9 +2,12 @@
 @import '/src/Components/Portfolio/Portfolio.css';
 @import '/src/Components/Contact/Contact.css';
 @import '/src/Components/Footer/Footer.css';
+@import '/src/Components/BlogSingle/BlogSingle.css';
 
 @import '/src/Pages/Home/Home.css';
 @import '/src/Pages/About/About.css';
+@import '/src/Pages/Blog/Blog.css';
+@import '/src/Pages/BlogContent/BlogContent.css';
 
 /* global + testing styles */
 * {
@@ -55,6 +58,8 @@ body {
     --home-bg-color: #ff8360;
     --about-bg-color: #EB5E55;
     --portfolio-bg-color: #48acf0;
+    --featured-post-bg-color: #ADBCA5;
+    --blog-body-bg-color:#542344;
     --contact-bg-color: #00ffac;
     --footer-bg-color: #231f20;
     --text-shadow: 1px 2px 5px #333;

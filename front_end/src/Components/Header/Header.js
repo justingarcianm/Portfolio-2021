@@ -11,6 +11,7 @@ function Header() {
 
                     <div className="nav-links">
                         <NavLink to="/" activeClassName="active">Home</NavLink>
+                        <NavLink to="/blog" activeClassName="active"> Blog</NavLink>
                         <NavLink to="/about" activeClassName="active">About</NavLink>
                         <a href="#contact">Contact</a>
                         <a href="https://github.com/justingarcianm" target="_blank" rel="noreferrer">Lorem</a>

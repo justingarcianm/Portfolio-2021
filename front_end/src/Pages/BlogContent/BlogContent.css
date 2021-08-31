@@ -1,0 +1,39 @@
+#blog-content h1,
+#blog-content p, 
+#blog-content h5 {
+    color: var(--secondary-font-color)!important;
+}
+
+#blog-content h1 {
+    font-size: 5rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}
+
+#blog-content h5 {
+    text-transform: uppercase;
+    font-weight: lighter;
+    text-align: left;
+}
+
+#blog-content h4 {
+    color: var(--secondary-font-color)!important;
+    border: var(--secondary-font-color) solid 1px;
+    width: fit-content;
+    padding: .5rem 1.5rem;
+    border-radius: 30px;
+}
+
+#blog-content p {
+    font-size: 1rem;
+    line-height: 2rem;
+    text-align: left;
+}
+
+#blog-content {
+    height: max-content;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    background-color: var(--featured-post-bg-color);
+}

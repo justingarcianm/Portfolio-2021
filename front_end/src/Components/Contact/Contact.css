@@ -20,4 +20,10 @@
 
 .custom-btn {
     background-color: var(--home-bg-color);
+    color: var(--main-font-color);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    padding: .5rem 1rem;
+    box-shadow: var(--text-shadow);
 }

@@ -14,3 +14,8 @@ export async function getAbout() {
     return await fetch(`${URI}/about`)
     .then( data => data.json() )
 }
+
+export async function getBlogs() {
+    return await fetch(`${URI}/blogs`)
+    .then( data => data.json() )
+}
